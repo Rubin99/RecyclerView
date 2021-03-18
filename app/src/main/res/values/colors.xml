@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <!-- Text color for the Sandwich label -->
+    <color name="color_label_text">#FF8341</color>
+    <!-- Text color for the Sandwich detail -->
+    <color name="color_detail_text">#5A267F</color>
+</resources>
