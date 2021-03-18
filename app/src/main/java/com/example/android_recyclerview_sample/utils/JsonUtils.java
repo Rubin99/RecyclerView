@@ -30,29 +30,20 @@ public class JsonUtils {
      * Return a {@link Sandwich} Object that can be used to populate the UI by parsing the JSON
      */
     public static Sandwich parseSandwichJson(String json) {
-        // If the JSON String is empty or null, then return early
         if (TextUtils.isEmpty(json)) {
             return null;
         }
 
-        // Try to parse the JSON string. If there's a problem with the way the JSON is formatted,
-        // a JSONException exception object will be thrown.
         try {
-            // Create a JSONObject from the JSON string
             JSONObject baseJson = new JSONObject(json);
 
-            // Extract the JSONObject associated with the key called "name"
             JSONObject name = baseJson.getJSONObject(KEY_NAME);
 
-            // For a given name, extract the value fro the key called "mainName"
             String mainName = name.getString(KEY_MAIN_NAME);
 
-            // For a given name, extract the JSONArray associated with the key called "alsoKnownAs"
             JSONArray alsoKnownAsArray = name.getJSONArray(KEY_ALSO_KNOWN_AS);
 
-            // Create an empty ArrayList
             List<String> alsoKnownAs = new ArrayList<>();
-            // If the JSONArray is not empty, add each element in the JSONArray to the ArrayList
             if (alsoKnownAsArray.length() != 0) {
                 for (int i = 0; i < alsoKnownAsArray.length(); i++) {
                     alsoKnownAs.add(alsoKnownAsArray.get(i).toString());
@@ -61,24 +52,18 @@ public class JsonUtils {
                 alsoKnownAs = null;
             }
 
-            // Extract the value for the key called "placeOfOrigin"
             String placeOfOrigin = baseJson.getString(KEY_PLACE_OF_ORIGIN);
             if (placeOfOrigin.isEmpty()) {
                 placeOfOrigin = null;
             }
 
-            // Extract the value for the key called "description"
             String description = baseJson.getString(KEY_DESCRIPTION);
 
-            // Extract the value for the key called "image"
             String imageUrl = baseJson.getString(KEY_IMAGE);
 
-            // Extract the JSONArray associated with the key "ingredients"
             JSONArray ingredientsArray = baseJson.getJSONArray(KEY_INGREDIENTS);
 
-            // Create an empty ArrayList
             List<String> ingredients = new ArrayList<>();
-            // If the JSONArray is not empty, add each element in the JSONArray to the ArrayList
             if (ingredientsArray.length() != 0) {
                 for (int j = 0; j < ingredientsArray.length(); j++) {
                     ingredients.add(ingredientsArray.get(j).toString());
@@ -91,8 +76,6 @@ public class JsonUtils {
             return new Sandwich(mainName, alsoKnownAs, placeOfOrigin, description, imageUrl, ingredients);
 
         } catch (JSONException e) {
-            // If an error is thrown when executing any of the above statements in the "try" block,
-            // catch the exception here, so the app does not crash.
             Log.e(TAG, "Problem parsing the Sandwich JSON results", e);
             return null;
         }

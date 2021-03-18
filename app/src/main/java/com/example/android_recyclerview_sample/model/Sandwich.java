@@ -12,9 +12,6 @@ public class Sandwich implements Serializable {
     private String image;
     private List<String> ingredients = null;
 
-    /**
-     * No args constructor for use in serialization
-     */
     public Sandwich() {
 
     }

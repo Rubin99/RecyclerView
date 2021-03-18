@@ -60,18 +60,6 @@ public class SandwichAdapter extends RecyclerView.Adapter<SandwichAdapter.ViewHo
         return data.size();
     }
 
-    // TODO (02) Create SandwichAdapter class and extend it
-// from RecyclerView.Adapter<TextItemViewHolder>
-
-// TODO (03) Create a variable, data, that holds a list of Sandwich.
-
-// TODO (04) Override getItemCount() to return the total number of items in the data set.
-
-// TODO (05) Override onBindViewHolder() and have it update the contents of the
-// ViewHolder to reflect the item at the given position.
-
-// TODO (06) Override onCreateViewHolder()
-
     class ViewHolder extends RecyclerView.ViewHolder implements  View.OnClickListener {
 
         private ImageView imageView;
@@ -89,7 +77,6 @@ public class SandwichAdapter extends RecyclerView.Adapter<SandwichAdapter.ViewHo
         @Override
         public void onClick(View view) {
             int mPosition = getLayoutPosition();
-// Use that to access the affected item in mWordList.
             Sandwich element = data.get(mPosition);
 
             Intent intent = new Intent(context, DetailActivity.class);
@@ -98,28 +85,4 @@ public class SandwichAdapter extends RecyclerView.Adapter<SandwichAdapter.ViewHo
         }
     }
 }
-
-//RecyclerView Widget
-//Layout list or grid
-//Scroll horizontal or vertical
-
-
-//Displaying large lists of data
-//It uses adapter pattern
-
-
-/**
- * Adapters
- * converts one interface to work with another
- * RecyclerView adapter must provide a few methods for RecyclerView to understand how to display data on the screen
- * 1. How many items are available
- * 2. How to draw an item
- * 3. Create a new view
- */
-
-/**
- * ViewHolder
- * Hold views
- * Store information for recycler view
- */
 

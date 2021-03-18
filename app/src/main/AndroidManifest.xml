@@ -15,7 +15,7 @@
         <activity android:name=".DetailActivity"
             android:theme="@style/DetailTheme"></activity>
         <activity android:name=".MainActivity"
-            android:label="Sandwiches">
+            android:label="Recipes">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

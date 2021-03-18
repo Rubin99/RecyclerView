@@ -45,41 +45,28 @@ public class DetailActivity extends AppCompatActivity {
 
     private void populateUI(Sandwich sandwich) {
 
-        // Get alsoKnownAs list of Strings
         List<String> alsoKnownList = sandwich.getAlsoKnownAs();
         if (alsoKnownList != null) {
-            // If alsoKnownList is not null, use TextUtils.join method that returns a string containing
-            // the tokens joined by delimiters.
+
             String alsoKnown = TextUtils.join(getString(R.string.new_line), alsoKnownList);
-            // Set also known as String to the TextView
             alsoKnownTv.setText(alsoKnown);
         } else {
-            // If the alsoKnownList is null, show message so that the user can be aware of
-            // the information availability
             alsoKnownTv.setText(getString(R.string.message_not_available));
         }
 
-        // Get place of origin string
         String originString = sandwich.getPlaceOfOrigin();
-        // If origin string is not null, set the text to the origin TextView, otherwise hide the TextView
         if (originString != null) {
             originTv.setText(originString);
         } else {
-            // If the alsoKnownList is null, show message so that the user can be aware of
-            // the information availability
             originTv.setText(getString(R.string.message_not_available));
         }
 
-        // Set the Description String to the description TextView
         descriptionTv.setText(sandwich.getDescription());
 
-        // Get ingredients list of Strings
         List<String> ingredientsList = sandwich.getIngredients();
         if (ingredientsList != null) {
-            // If ingredientsList is not null, use TextUtils.join method that returns a string containing
-            // the tokens joined by delimiters.
             String ingredients = TextUtils.join(getString(R.string.new_line), ingredientsList);
-            // Set ingredients String to the TextView
+
             ingredientsTv.setText(ingredients);
         }
 
@@ -97,9 +84,7 @@ public class DetailActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * When the arrow icon in the app bar is clicked, finishes DetailActivity.
-     */
+
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();

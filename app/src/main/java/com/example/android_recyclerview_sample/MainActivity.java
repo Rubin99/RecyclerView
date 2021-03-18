@@ -42,18 +42,11 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.sandwich_list);
 
-        // TODO (07) Create a new SandwichAdapter variable,
-        // and bind it to the RecyclerView’s Adapter.
-
         adapter = new SandwichAdapter(this);
         recyclerView.setAdapter(adapter);
 
         adapter.setData(sandwichList);
 
-
-
     }
-
-
 
 }

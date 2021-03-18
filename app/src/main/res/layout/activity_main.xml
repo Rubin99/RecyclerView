@@ -7,9 +7,6 @@
     tools:context=".MainActivity">
 
 
-    <!-- TODO (01) Add a RecyclerView -->
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/sandwich_list"
         android:layout_width="0dp"
